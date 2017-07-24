@@ -4,8 +4,6 @@ const config = require('./config');
 
 const service = {};
 
-console.log(config.service);
-
 // //add all service
 _.each(config.service, (v, k) => {
   if (v != '') {
