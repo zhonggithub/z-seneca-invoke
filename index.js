@@ -4,7 +4,6 @@ const config = require('./config');
 
 const service = {};
 
-// //add all service
 _.each(config.service, (v, k) => {
   if (v != '') {
     let tmp = v.split(':');
@@ -13,9 +12,6 @@ _.each(config.service, (v, k) => {
         'logLevel': 'info',
         'timeout': 15000,
         tag: `service-${k}`,
-      }).use('zipkin-tracer', {
-        host: 'zipkin.local',
-        port: 80,
       });
       tmpService.client({
         type: 'http',

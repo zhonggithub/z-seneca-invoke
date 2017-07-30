@@ -1,4 +1,13 @@
 const service = require('./index');
 
-console.log(service);
+service.console.actAsync({
+  role: 'console.account',
+  cmd: 'list',
+}, {
+  params: {}
+}).then(ret => {
+  console.log(ret.data);
+}).catch(err => {
+  console.log(err);
+});
 console.log('----');
